@@ -1,6 +1,6 @@
+import {FlashList} from '@shopify/flash-list';
 import React from 'react';
 import {
-  FlatList,
   View,
   Text,
   StyleSheet,
@@ -14,7 +14,7 @@ import TweetCell from './TweetCell';
 const Twitter = () => {
   return (
     <SafeAreaView style={{flex: 1}}>
-      <FlatList
+      <FlashList
         keyExtractor={item => {
           return item.id;
         }}
