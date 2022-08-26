@@ -11,6 +11,7 @@ export interface TweetCellProps {
 const TweetCell = ({tweet}: TweetCellProps) => {
   return (
     <Pressable
+      key={tweet.id}
       onPress={() => {
         console.log('Pressed tweet', tweet);
       }}>
