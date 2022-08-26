@@ -16,6 +16,9 @@ const Twitter = () => {
     <SafeAreaView style={{flex: 1}}>
       <FlashList
         estimatedItemSize={150}
+        onBlankArea={blankAreaEvent => {
+          console.log(blankAreaEvent);
+        }}
         keyExtractor={item => {
           return item.id;
         }}
