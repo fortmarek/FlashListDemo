@@ -29,17 +29,21 @@ const tweetActions = (
   return (
     <View style={[styles.rowActions, styles.actionBar]}>
       <View style={styles.elemAction}>
+        {/* @ts-expect-error */}
         <Image style={styles.actionButton} source={assets[0]} />
         <Text style={styles.actionText}>{comments}</Text>
       </View>
       <View style={styles.elemAction}>
+        {/* @ts-expect-error */}
         <Image style={styles.actionButton} source={assets[1]} />
         <Text style={styles.actionText}>{retweets}</Text>
       </View>
       <View style={styles.elemAction}>
+        {/* @ts-expect-error */}
         <Image style={styles.actionButton} source={assets[2]} />
         <Text style={styles.actionText}>{likes}</Text>
       </View>
+      {/* @ts-expect-error */}
       <Image style={styles.actionButton} source={assets[3]} />
     </View>
   );
