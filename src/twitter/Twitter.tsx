@@ -1,12 +1,11 @@
-import {FlashList, useBenchmark} from '@shopify/flash-list';
-import React, {useRef} from 'react';
+import {FlashList} from '@shopify/flash-list';
+import React from 'react';
 import {
   View,
   Text,
   StyleSheet,
   ActivityIndicator,
   SafeAreaView,
-  Alert,
 } from 'react-native';
 
 import {tweets} from './data/tweets';
@@ -14,18 +13,10 @@ import Tweet from './models/Tweet';
 import TweetCell from './TweetCell';
 
 const Twitter = () => {
-  const ref = useRef<FlashList<Tweet>>(null);
-  const [blankAreaTracker] = useBenchmark(ref, res => {
-    if (!res.interrupted) {
-      Alert.alert('Blank area', res.formattedString);
-    }
-  });
   return (
     <SafeAreaView style={{flex: 1}}>
       <FlashList
         estimatedItemSize={150}
-        ref={ref}
-        onBlankArea={blankAreaTracker}
         keyExtractor={item => {
           return item.id;
         }}
